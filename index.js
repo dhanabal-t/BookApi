@@ -1,5 +1,5 @@
 import express from "express"
-import mongoose from "mongoose"
+import client from "./config/config.js";
 
 
  import books from "./routes/book.js"
@@ -21,8 +21,7 @@ app.use('/user',users)
 
 
 
-mongoose.connect('mongodb+srv://admin:admin@api1.uioh4pi.mongodb.net/')
-.then(() =>
+client.connect().then(() =>
 app.listen(5000, () => {
   console.log(`server running on port 5000`);
 })

@@ -1,7 +1,7 @@
 import express from "express"
 import multer from "multer";
 
-import { postBook,getBook,getBooka,updateBook,deleteBook } from  "../controllers/bc.js"
+import { postBook,getBook,getBooka,updateBook,deleteBook } from  "../controllers/auth.js"
  
 
 const router=express.Router()

@@ -1,6 +1,21 @@
-import users from '../models/auth.js'
-import transporter from '../emailconfig.js';
 import bcrypt from "bcryptjs"
+import dotenv from "dotenv"
+import nodemailer from "nodemailer"
+
+import users from '../models/auth.js'
+
+dotenv.config();
+
+let transporter = nodemailer.createTransport({
+  host: "smtp.gmail.com",
+ port: 465,
+ secure: true,
+  auth:{
+      user:process.env.USER,
+      pass:process.env.PASS
+  }
+})
+ 
 
 function generateRandomNumber() {
     var minm = 100000;
